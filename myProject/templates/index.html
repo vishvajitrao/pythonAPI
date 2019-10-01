@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Python Django Application</h1>
+<ul>
+        {% for person in object_list %}
+            <li>{{ person.first_name }}</li>
+            <li>{{ person.last_name }}</li>
+            <li>{{ person.email }}</li>
+            <li>{{ person.number }}</li>
+        {% endfor %}
+</ul>
+</body>
+</html>
+

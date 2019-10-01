@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Title</title>
+</head>
+<body>
+<h1 class="text-center mt-3 mb-3">Python Django Application</h1>
+<a href="{% url "CreateUser" %}" class="text-center mt-3 mb-3 mr-3 btn btn-info">Create New User</a>
+<ul>
+        <table class="table">
+            <thead>
+            <th>First Name</th>
+            <th colspan="3" class="text-center">Operations</th>
+            </thead>
+            {% for person in object_list %}
+            <tbody>
+
+
+            <td>{{ person.first_name }}</td>
+
+            <td><a href="{% url "PersonDetails" person.id %}" class="btn btn-primary">Details</td>
+            <td><a href="{% url "PersonUpdate" person.id %}" class="btn btn-danger">Update</td>
+            <td><a href="{% url "PersonDelete" person.id %}" class="btn btn-primary">Delete</td>
+
+
+            </tbody>
+            {% endfor %}
+        </table>
+</ul>
+</body>
+</html>
+

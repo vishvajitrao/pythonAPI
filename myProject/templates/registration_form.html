@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% include 'main.html' %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Title</title>
+</head>
+<body>
+<h1 class="text-center mt-3 mb-3">User Registration Form</h1>
+<div class="container-fluid">
+    <div class="row">
+        {% for message in messages %}
+        <p class="alert alert-danger text-center">{{message}}</p>
+
+        {% endfor %}
+        <div class="col-sm-8 offset-sm-2">
+<form method="post" action="">
+    {% csrf_token %}
+            <label>User Name:</label>
+            {{form.username}}
+
+            <label>First Name:</label>
+            {{form.first_name}}
+
+            <label>Last Name:</label>
+            {{form.last_name}}
+
+
+            <label>email:</label>
+            {{form.email}}
+
+            <label>Password:</label>
+            {{form.password}}
+
+            <label>Confirm Password:</label>
+            {{form.confirmpass}}
+
+            <input type="submit" class="btn btn-danger" value="Register Now" style="margin-bottom:50px;">
+            <input type="reset" class="btn btn-info" style="margin-bottom: 50px;">
+</form>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
+

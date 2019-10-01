@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% include 'main.html' %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Title</title>
+</head>
+<body>
+<h1 class="text-center mt-3 mb-3">Custom Registration Form</h1>
+<div class="container-fluid">
+    <div class="row">
+        {% for message in messages %}
+        <p class="alert alert-danger text-center">{{message}}</p>
+
+        {% endfor %}
+        <div class="col-sm-8 offset-sm-2">
+<form method="post" action="">
+    {% csrf_token %}
+            <label>User Name:</label>
+            <input type="text" name="username" class="form-control mb-3" placeholder="Enter user name here">
+
+            <label>First Name:</label>
+            <input type="text" name="first_name" class="form-control mb-3" placeholder="Enter first name here">
+
+            <label>Last Name:</label>
+            <input type="text" name="last_name" class="form-control mb-3" placeholder="Enter last name here">
+
+
+            <label>email:</label>
+            <input type="email" name="email" class="form-control mb-3" placeholder="Enter email here">
+
+            <label>Phone Number:</label>
+            <input type="number" name="pnumber" class="form-control mb-3" placeholder="Enter phone number here">
+
+            <label>Password:</label>
+            <input type="password" name="password" class="form-control mb-3" placeholder="Enter password here">
+
+            <label>Confirm Password:</label>
+            <input type="password" name="confirmpass" class="form-control mb-3" placeholder="Enter confirm password here">
+
+            <input type="submit" class="btn btn-danger" value="Register Now" style="margin-bottom:50px;">
+            <input type="reset" class="btn btn-info" style="margin-bottom: 50px;">
+</form>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
+
